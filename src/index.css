@@ -1,10 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #6366f1;
-  --color-secondary: #f97316;
+  --color-primary: #6366f1; /* Indigo-500 */
+  --color-secondary: #f97316; /* Orange-500 */
+  --color-accent: #fbbf24; /* Amber-400 */
 }
 
+@layer base {
+  body {
+    @apply bg-indigo-50 text-slate-900;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom UI Gradients */
 .bg-indigo-gradient {
   background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
 }
@@ -13,6 +25,15 @@
   background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);
 }
 
+.bg-purple-gradient {
+  background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+}
+
+.bg-amber-gradient {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+}
+
+/* Animations */
 .bouncy {
   animation: bounce 2s infinite;
 }
@@ -20,4 +41,55 @@
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
+}
+
+.wiggle:hover {
+  animation: wiggle 0.3s infinite;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Print Utility Classes (for Notes/Reports) */
+@media print {
+  .print\:hidden {
+    display: none !important;
+  }
+  .print\:bg-white {
+    background: white !important;
+  }
+  .print\:p-0 {
+    padding: 0 !important;
+  }
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+  .print\:border-none {
+    border: none !important;
+  }
+  .print\:block {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
