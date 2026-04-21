@@ -1,30 +1,9 @@
-{
-  "name": "topper-ai-guru",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@google/genai": "^0.21.0",
-    "firebase": "^10.8.0",
-    "lucide-react": "^0.344.0",
-    "motion": "^11.0.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "recharts": "^2.12.2"
-  },
-  "devDependencies": {
-    "@tailwindcss/vite": "^4.0.0",
-    "@types/react": "^18.2.56",
-    "@types/react-dom": "^18.2.19",
-    "@vitejs/plugin-react": "^4.2.1",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.1.4"
-  }
+"dependencies": {
+  "motion": "^12.0.0",
+  "lucide-react": "^0.471.0",
+  "recharts": "^2.15.0",
+  "firebase": "^11.1.0",
+  "@google/genai": "^0.21.0",
+  "clsx": "^2.1.1",
+  "tailwind-merge": "^2.6.0"
 }
