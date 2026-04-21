@@ -15,7 +15,7 @@ export interface StudentProfile {
   lastStudyDate: string | null;
   difficulty: "Easy" | "Medium" | "Hard";
   personality: "Friendly" | "Strict" | "Fun";
-  weakTopics: string[];
+  weakTopics: string[]; // AI insights ke liye
 }
 
 export interface StudyTask {
