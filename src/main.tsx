@@ -7,7 +7,7 @@ import './i18n';
 /**
  * Topper AI Guru - Main Entry Point
  * 
- * Yeh file application ko DOM mein mount karti hai aur i18n/CSS ko load karti hai.
+ * Yeh file application ko DOM mein mount karti hai aur i18n configuration ko load karti hai.
  */
 const rootElement = document.getElementById('root');
 
