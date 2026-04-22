@@ -3,55 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="theme-color" content="#6366f1" />
-    <title>GyanGuru AI 🏆</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-
-    <style>
-      /* Loading Animation */
-      #loading-screen {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #0f172a;
-        color: white;
-        z-index: 9999;
-        font-family: 'Inter', sans-serif;
-      }
-      .loader-bar {
-        width: 200px;
-        height: 4px;
-        background: #1e293b;
-        border-radius: 10px;
-        margin-top: 15px;
-        overflow: hidden;
-      }
-      .loader-progress {
-        width: 50%;
-        height: 100%;
-        background: #6366f1;
-        animation: loading 2s infinite ease-in-out;
-      }
-      @keyframes loading {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(200%); }
-      }
+    <title>Topper AI Guru 🏆</title> <style>
+      body { background: #0f172a; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; color: white; font-family: sans-serif; }
+      .loader { border: 4px solid #1e293b; border-top: 4px solid #6366f1; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
   </head>
 
-  <body style="margin:0; background: #0f172a;">
-    <div id="loading-screen">
-      <h2>🚀 GyanGuru Loading...</h2>
-      <div class="loader-bar"><div class="loader-progress"></div></div>
+  <body>
+    <div id="root" style="text-align: center;">
+      <div class="loader" style="margin: 0 auto 20px;"></div>
+      <h2>🚀 Topper AI Guru Loading...</h2>
     </div>
-
-    <div id="root"></div>
 
     <script type="module" src="./src/main.tsx"></script>
   </body>
