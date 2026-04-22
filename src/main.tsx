@@ -5,7 +5,7 @@ import './index.css';
 import './i18n';
 
 /**
- * Error Boundary (White screen रोकने के लिए)
+ * Error Boundary (white screen रोकने के लिए)
  */
 class ErrorBoundary extends Component<
   { children: ReactNode },
@@ -21,26 +21,20 @@ class ErrorBoundary extends Component<
   }
 
   componentDidCatch(error: any) {
-    console.error("App crashed:", error);
+    console.error("App Crash:", error);
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{
-          padding: "20px",
-          textAlign: "center",
-          fontFamily: "sans-serif"
-        }}>
-          <h2>⚠️ कुछ error आ गया है</h2>
-          <p>App reload करें या developer console check करें</p>
+        <div style={{ textAlign: "center", padding: "20px" }}>
+          <h2>⚠️ App Crash Ho Gaya</h2>
           <button onClick={() => window.location.reload()}>
-            Reload App
+            Reload
           </button>
         </div>
       );
     }
-
     return this.props.children;
   }
 }
@@ -48,13 +42,13 @@ class ErrorBoundary extends Component<
 const rootElement = document.getElementById('root');
 
 if (!rootElement) {
-  throw new Error("Root element नहीं मिला (index.html check करो)");
+  document.body.innerHTML = "<h2 style='text-align:center'>Root element missing</h2>";
+} else {
+  createRoot(rootElement).render(
+    <StrictMode>
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
+    </StrictMode>
+  );
 }
-
-createRoot(rootElement).render(
-  <StrictMode>
-    <ErrorBoundary>
-      <App />
-    </ErrorBoundary>
-  </StrictMode>
-);
